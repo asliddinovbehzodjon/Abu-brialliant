@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block title %}
+  {{product.name}} | {{block.super}}
+{% endblock title %}
+{% block content %}
+
+<center>
+     <div class="col-lg-4">
+          <img class="thumbnail" src="{{product.image.url}}">
+          <div class="box-element product">
+               <h6><strong>{{product.name}}</strong></h6>
+               <hr>
+     
+               <button data-product={{product.id}} data-action="add"  class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+               <a class="btn btn-outline-success" href="{% url 'store' %}">Back</a>
+               <h4 style="display: inline-block; float: right"><strong>${{product.cost}}</strong></h4>
+     
+          </div>
+     </div>
+     
+     
+</center>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block title %}
+ Login | {{block.super}}
+{% endblock title %}
+
+{% block content %}
+     {% load static %}
+     <link rel="stylesheet" href="{% static 'css/logreg.css' %}">
+     <form  method="POST">
+          {% csrf_token %}
+        
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="name" required>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+           
+            <button type="submit">Login</button>
+           
+          </div>
+        
+        
+        </form>
+{% endblock content %}
+     
